@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Records Management - LEMS Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/src/styles/lems.css">
+  <link rel="stylesheet" href="/src/styles/records-management.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <button id="menu-toggle" class="action-button menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <i class="fas fa-shield-alt logo-icon"></i>
+      <div class="logo-text">LEMS Dashboard</div>
+    </div>
+
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search...">
+    </div>
+
+    <div class="header-controls">
+      <button class="action-button notification-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="dark-toggle" class="action-button dark-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="profile-dropdown">
+        <div class="profile-image">JD</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+      <div class="menu-category">Main</div>
+      <a href="/" class="menu-item">
+        <i class="fas fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="/case-management" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Case Management</span>
+      </a>
+      <a href="/records" class="menu-item active">
+        <i class="fas fa-database"></i>
+        <span>Records Management</span>
+      </a>
+
+      <div class="menu-category">Operations</div>
+      <a href="/dispatch" class="menu-item">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Real-Time Dispatch</span>
+      </a>
+      <a href="/fleet" class="menu-item">
+        <i class="fas fa-car"></i>
+        <span>Fleet Management</span>
+      </a>
+      <a href="/scheduling" class="menu-item">
+        <i class="fas fa-clock"></i>
+        <span>Scheduling</span>
+      </a>
+
+      <div class="menu-category">Admin</div>
+      <a href="/employees" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Employee Records</span>
+      </a>
+      <a href="/citizen-portal" class="menu-item">
+        <i class="fas fa-globe"></i>
+        <span>Citizen Portal</span>
+      </a>
+      <a href="/verification" class="menu-item">
+        <i class="fas fa-id-card"></i>
+        <span>LPR & NIDA Verification</span>
+      </a>
+      <a href="/analytics" class="menu-item">
+        <i class="fas fa-chart-bar"></i>
+        <span>Reports & Analytics</span>
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-header">
+        <h2>Records Management</h2>
+        <p>View and manage criminal records and incident reports</p>
+      </div>
+
+      <div class="records-management">
+        <div class="filters-bar">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="record-search" placeholder="Search records...">
+          </div>
+          <div class="filter-group">
+            <select id="type-filter" class="filter-select">
+              <option value="all">All Types</option>
+              <option value="Criminal">Criminal Records</option>
+              <option value="Incident">Incident Reports</option>
+            </select>
+            <select id="status-filter" class="filter-select">
+              <option value="all">All Status</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="records-list" class="records-grid">
+          <!-- Records will be dynamically inserted here -->
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { initRecordsManagement } from '/src/js/routes/records-management.js';
+    initRecordsManagement();
+  </script>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
