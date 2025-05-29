@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEMS Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/src/styles/lems.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <button id="menu-toggle" class="action-button menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <i class="fas fa-shield-alt logo-icon"></i>
+      <div class="logo-text">LEMS Dashboard</div>
+    </div>
+
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search...">
+    </div>
+
+    <div class="header-controls">
+      <button class="action-button notification-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="dark-toggle" class="action-button dark-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="profile-dropdown">
+        <div class="profile-image">JD</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+      <div class="menu-category">Main</div>
+      <a href="/" class="menu-item active">
+        <i class="fas fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="/case-management" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Case Management</span>
+      </a>
+      <a href="/records" class="menu-item">
+        <i class="fas fa-database"></i>
+        <span>Records Management</span>
+      </a>
+
+      <div class="menu-category">Operations</div>
+      <a href="/dispatch" class="menu-item">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Real-Time Dispatch</span>
+      </a>
+      <a href="/fleet" class="menu-item">
+        <i class="fas fa-car"></i>
+        <span>Fleet Management</span>
+      </a>
+      <a href="/scheduling" class="menu-item">
+        <i class="fas fa-clock"></i>
+        <span>Scheduling</span>
+      </a>
+
+      <div class="menu-category">Admin</div>
+      <a href="/employees" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Employee Records</span>
+      </a>
+      <a href="/citizen-portal" class="menu-item">
+        <i class="fas fa-globe"></i>
+        <span>Citizen Portal</span>
+      </a>
+      <a href="/verification" class="menu-item">
+        <i class="fas fa-id-card"></i>
+        <span>LPR & NIDA Verification</span>
+      </a>
+      <a href="/analytics" class="menu-item">
+        <i class="fas fa-chart-bar"></i>
+        <span>Reports & Analytics</span>
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-header">
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back, Officer Taylor!</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Active Incidents</h3>
+            <p>142</p>
+            <div class="trend trend-up">
+              <i class="fas fa-arrow-up"></i> 8% from yesterday
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-car-side"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Dispatched Units</h3>
+            <p>34</p>
+            <div class="trend trend-up">
+              <i class="fas fa-arrow-up"></i> 12% from yesterday
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Pending Reports</h3>
+            <p>89</p>
+            <div class="trend trend-down">
+              <i class="fas fa-arrow-down"></i> 5% from yesterday
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Citizen Feedback</h3>
+            <p>412</p>
+            <div class="trend trend-up">
+              <i class="fas fa-arrow-up"></i> 15% from yesterday
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modules -->
+      <h3 class="section-title">Core Modules</h3>
+      <div class="modules-section">
+        <div class="module-card module-blue">
+          <div class="icon-container">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h3>Incident Management</h3>
+          <p>Track, update and manage all incident reports in real-time with advanced filtering capabilities.</p>
+          <div class="card-actions">
+            <div class="status">Last updated: 2 hours ago</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="module-card module-purple">
+          <div class="icon-container">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Dispatch System</h3>
+          <p>Real-time GPS tracking, unit assignment, and response management with interactive mapping.</p>
+          <div class="card-actions">
+            <div class="status">Active now</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="module-card module-green">
+          <div class="icon-container">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Criminal Records</h3>
+          <p>Secure, comprehensive database of criminal records with advanced search and filtering tools.</p>
+          <div class="card-actions">
+            <div class="status">3 new updates</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="module-card module-orange">
+          <div class="icon-container">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Personnel Management</h3>
+          <p>Complete officer data management including scheduling, certifications, and performance metrics.</p>
+          <div class="card-actions">
+            <div class="status">Updated today</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="module-card module-red">
+          <div class="icon-container">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Citizen Portal</h3>
+          <p>Public-facing portal for citizen reporting, information requests, and community updates.</p>
+          <div class="card-actions">
+            <div class="status">12 new submissions</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="module-card module-blue">
+          <div class="icon-container">
+            <i class="fas fa-id-card"></i>
+          </div>
+          <h3>LPR & NIDA Verification</h3>
+          <p>Automated license plate recognition and national ID verification system with real-time alerts.</p>
+          <div class="card-actions">
+            <div class="status">Active now</div>
+            <div class="action-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <h3 class="section-title">Recent Activity</h3>
+      <div class="activity-list">
+        <div class="activity-item activity-blue">
+          <div class="activity-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="activity-content">
+            <h4>New Incident Report Filed</h4>
+            <p>Officer Johnson submitted incident report #4872 for a traffic violation.</p>
+          </div>
+          <div class="activity-time">10 min ago</div>
+        </div>
+        <div class="activity-item activity-red">
+          <div class="activity-icon">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <div class="activity-content">
+            <h4>Emergency Call Received</h4>
+            <p>911 dispatcher logged emergency call from 1423 Oak Street regarding a burglary.</p>
+          </div>
+          <div class="activity-time">25 min ago</div>
+        </div>
+        <div class="activity-item activity-green">
+          <div class="activity-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="activity-content">
+            <h4>Case Status Updated</h4>
+            <p>Case #2391 status changed from "Under Investigation" to "Closed".</p>
+          </div>
+          <div class="activity-time">1 hour ago</div>
+        </div>
+        <div class="activity-item activity-purple">
+          <div class="activity-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div class="activity-content">
+            <h4>New Officer Onboarded</h4>
+            <p>Officer Maria Rodriguez has been added to the South Precinct roster.</p>
+          </div>
+          <div class="activity-time">3 hours ago</div>
+        </div>
+        <div class="activity-item activity-orange">
+          <div class="activity-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="activity-content">
+            <h4>Monthly Stats Generated</h4>
+            <p>March 2025 statistical report has been generated and is ready for review.</p>
+          </div>
+          <div class="activity-time">5 hours ago</div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
