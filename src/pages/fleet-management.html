@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fleet Management - LEMS Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/src/styles/lems.css">
+  <link rel="stylesheet" href="/src/styles/fleet-management.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <button id="menu-toggle" class="action-button menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <i class="fas fa-shield-alt logo-icon"></i>
+      <div class="logo-text">LEMS Dashboard</div>
+    </div>
+
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search...">
+    </div>
+
+    <div class="header-controls">
+      <button class="action-button notification-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="dark-toggle" class="action-button dark-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="profile-dropdown">
+        <div class="profile-image">JD</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+      <div class="menu-category">Main</div>
+      <a href="/" class="menu-item">
+        <i class="fas fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="/case-management" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Case Management</span>
+      </a>
+      <a href="/records" class="menu-item">
+        <i class="fas fa-database"></i>
+        <span>Records Management</span>
+      </a>
+
+      <div class="menu-category">Operations</div>
+      <a href="/dispatch" class="menu-item">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Real-Time Dispatch</span>
+      </a>
+      <a href="/fleet" class="menu-item active">
+        <i class="fas fa-car"></i>
+        <span>Fleet Management</span>
+      </a>
+      <a href="/scheduling" class="menu-item">
+        <i class="fas fa-clock"></i>
+        <span>Scheduling</span>
+      </a>
+
+      <div class="menu-category">Admin</div>
+      <a href="/employees" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Employee Records</span>
+      </a>
+      <a href="/citizen-portal" class="menu-item">
+        <i class="fas fa-globe"></i>
+        <span>Citizen Portal</span>
+      </a>
+      <a href="/verification" class="menu-item">
+        <i class="fas fa-id-card"></i>
+        <span>LPR & NIDA Verification</span>
+      </a>
+      <a href="/analytics" class="menu-item">
+        <i class="fas fa-chart-bar"></i>
+        <span>Reports & Analytics</span>
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-header">
+        <h2>Fleet Management</h2>
+        <p>Monitor and manage department vehicles</p>
+      </div>
+
+      <div class="fleet-management">
+        <!-- Fleet Stats -->
+        <div class="fleet-stats">
+          <div class="stat-card">
+            <div class="stat-icon total">
+              <i class="fas fa-car"></i>
+            </div>
+            <div class="stat-content">
+              <h3 id="total-vehicles">0</h3>
+              <p>Total Vehicles</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon active">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+              <h3 id="active-vehicles">0</h3>
+              <p>Active</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon maintenance">
+              <i class="fas fa-wrench"></i>
+            </div>
+            <div class="stat-content">
+              <h3 id="in-maintenance">0</h3>
+              <p>In Maintenance</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon out-of-service">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="stat-content">
+              <h3 id="out-of-service">0</h3>
+              <p>Out of Service</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon needs-maintenance">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-content">
+              <h3 id="needs-maintenance">0</h3>
+              <p>Needs Maintenance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="vehicle-search" placeholder="Search vehicles...">
+          </div>
+          <div class="filter-group">
+            <select id="status-filter" class="filter-select">
+              <option value="all">All Status</option>
+              <option value="Active">Active</option>
+              <option value="Maintenance">In Maintenance</option>
+              <option value="Out of Service">Out of Service</option>
+            </select>
+            <select id="type-filter" class="filter-select">
+              <option value="all">All Types</option>
+              <option value="Patrol Car">Patrol Cars</option>
+              <option value="SUV">SUVs</option>
+              <option value="Motorcycle">Motorcycles</option>
+              <option value="Van">Vans</option>
+            </select>
+            <select id="location-filter" class="filter-select">
+              <option value="all">All Locations</option>
+              <option value="North Precinct">North Precinct</option>
+              <option value="South Precinct">South Precinct</option>
+              <option value="Central Station">Central Station</option>
+              <option value="East Division">East Division</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Vehicles Grid -->
+        <div id="vehicles-list" class="vehicles-grid">
+          <!-- Vehicles will be dynamically inserted here -->
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { initFleetManagement } from '/src/js/routes/fleet-management.js';
+    initFleetManagement();
+  </script>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
